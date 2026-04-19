@@ -72,21 +72,40 @@
     <p>A results-driven Technical Support VA with a background in customer service and service desk operations. I focus on delivering fast, accurate resolutions through calls, email, and chat, ensuring smooth workflows and satisfied clients.</p>
     
     <h2>Specialties</h2>
-    <div class="grid">
-        <div class="card">
-            <h3>Technical Support</h3>
-            <p>Solving complex issues via chat and email with high accuracy and speed.</p>
-        </div>
-        <div class="card">
-            <h3>Customer Service</h3>
-            <p>Providing white-glove support to ensure long-term client satisfaction.</p>
-        </div>
-        <div class="card">
-            <h3>Organization</h3>
-            <p>Workflow management and administrative support to keep your business running smoothly.</p>
-        </div>
-    </div>
-</section>
+   <div class="tabs">
+    <button class="tab-btn active" onclick="openTab(event, 'Admin')">Admin Support</button>
+    <button class="tab-btn" onclick="openTab(event, 'Tech')">Technical Support</button>
+</div>
+
+<div id="Admin" class="tab-content" style="display:block">
+    <h3>Administrative Specialties</h3>
+    <ul>
+        <li>Inbox Management & Clearing</li>
+        <li>Calendar Scheduling (Calendly/G-Suite)</li>
+        <li>Data Entry & Spreadsheet Cleanup</li>
+    </ul>
+</div>
+
+<div id="Tech" class="tab-content" style="display:none">
+    <h3>Technical Support Skills</h3>
+    <ul>
+        <li>Zendesk/Intercom Management</li>
+        <li>Software Troubleshooting</li>
+        <li>Basic HTML/GitHub Portfolio Setup</li>
+    </ul>
+</div>
+
+<script>
+function openTab(evt, tabName) {
+    var i, content, buttons;
+    content = document.getElementsByClassName("tab-content");
+    for (i = 0; i < content.length; i++) { content[i].style.display = "none"; }
+    buttons = document.getElementsByClassName("tab-btn");
+    for (i = 0; i < buttons.length; i++) { buttons[i].className = buttons[i].className.replace(" active", ""); }
+    document.getElementById(tabName).style.display = "block";
+    evt.currentTarget.className += " active";
+}
+</script>
 
 <footer>
     <p>&copy; 2026 Irine Sanorjo | Made with GitHub Pages</p>
