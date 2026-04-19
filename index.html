@@ -72,6 +72,21 @@
         .tool-tags { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 15px; }
         .tag { background: rgba(59, 130, 246, 0.3); border: 1px solid var(--accent); padding: 5px 12px; border-radius: 20px; font-size: 0.85rem; font-weight: 600; }
 
+        /* Custom styling for the Required Form Card */
+        .form-card {
+            background: rgba(114, 72, 185, 0.2);
+            border: 2px solid var(--google-form);
+            text-align: center;
+            padding: 30px;
+            border-radius: 20px;
+            margin-bottom: 40px;
+            text-decoration: none;
+            color: #fff;
+            display: block;
+            transition: 0.3s;
+        }
+        .form-card:hover { background: rgba(114, 72, 185, 0.3); transform: scale(1.02); }
+
         .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; }
         .contact-card {
             text-align: center; text-decoration: none; color: #fff;
@@ -173,13 +188,14 @@
     <div class="section-title">
         <h2>Get In Touch</h2>
     </div>
-    <div class="contact-grid">
-        <a href="https://forms.gle/qBJwigEg9nUJ6w5i8" target="_blank" class="contact-card">
-            <i class="fa-solid fa-file-lines" style="color: var(--google-form);"></i>
-            <h3>Contact Form</h3>
-            <p>Click to Fill Out</p>
-        </a>
 
+    <a href="https://forms.gle/qBJwigEg9nUJ6w5i8" target="_blank" class="form-card">
+        <i class="fa-solid fa-file-lines" style="font-size: 2.5rem; margin-bottom: 15px; color: var(--google-form);"></i>
+        <h3 style="margin: 0 0 5px 0;">Step 1: Fill out the Inquiry Form</h3>
+        <p style="margin: 0; opacity: 0.9;">Please provide your name, email, and availability to get started.</p>
+    </a>
+
+    <div class="contact-grid">
         <a href="mailto:irineworksx@gmail.com" class="contact-card">
             <i class="fa-solid fa-envelope" style="color: var(--accent);"></i>
             <h3>Email</h3>
