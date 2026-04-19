@@ -13,6 +13,7 @@
             --whatsapp: #25d366;
             --facebook: #1877f2;
             --linkedin: #0077b5;
+            --google-form: #7248b9; /* Purple for Google Forms */
             --text-main: #ffffff;
             --text-light: #e2e8f0;
             --glass: rgba(0, 0, 0, 0.6); 
@@ -71,12 +72,13 @@
         .tool-tags { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 15px; }
         .tag { background: rgba(59, 130, 246, 0.3); border: 1px solid var(--accent); padding: 5px 12px; border-radius: 20px; font-size: 0.85rem; font-weight: 600; }
 
-        .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; }
+        .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; }
         .contact-card {
             text-align: center; text-decoration: none; color: #fff;
             display: flex; flex-direction: column; align-items: center;
-            margin-bottom: 0; padding: 25px;
+            margin-bottom: 0; padding: 25px; transition: 0.3s;
         }
+        .contact-card:hover { border-color: var(--accent); background: rgba(255, 255, 255, 0.05); }
         .contact-card i { font-size: 2rem; margin-bottom: 10px; }
         .contact-card p { font-weight: 600; word-break: break-all; margin: 0; font-size: 0.85rem; }
 
@@ -88,7 +90,7 @@
 <body>
 
 <nav>
-    <a href="#" class="logo">Your future Virtual Assistant</a>
+    <a href="#" class="logo">IRINE.WORKS</a>
     <div class="nav-links">
         <a href="#about">About</a>
         <a href="#skills">Skills</a>
@@ -172,6 +174,12 @@
         <h2>Get In Touch</h2>
     </div>
     <div class="contact-grid">
+        <a href="https://forms.gle/qBJwigEg9nUJ6w5i8" target="_blank" class="contact-card">
+            <i class="fa-solid fa-file-lines" style="color: var(--google-form);"></i>
+            <h3>Contact Form</h3>
+            <p>Click to Fill Out</p>
+        </a>
+
         <a href="mailto:irineworksx@gmail.com" class="contact-card">
             <i class="fa-solid fa-envelope" style="color: var(--accent);"></i>
             <h3>Email</h3>
@@ -199,7 +207,7 @@
 </section>
 
 <footer>
-    <p>&copy; 2026 Irine Sanorjo | Your future Virtual Assistant</p>
+    <p>&copy; 2026 Irine Sanorjo | Your futurre Virtual Assistant</p>
 </footer>
 
 </body>
