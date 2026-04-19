@@ -20,7 +20,6 @@
         * { box-sizing: border-box; }
         body { font-family: 'Plus Jakarta Sans', sans-serif; margin: 0; color: var(--text-main); background: #f8fafc; line-height: 1.6; }
 
-        /* Navigation */
         nav {
             position: sticky; top: 0; background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px); padding: 15px 5%;
@@ -30,13 +29,14 @@
         .logo { font-weight: 800; font-size: 1.2rem; color: var(--primary); text-decoration: none; }
         .nav-links a { text-decoration: none; color: var(--text-light); margin-left: 20px; font-weight: 500; font-size: 0.9rem; }
 
-        /* Hero Section - Now correctly at the top */
+        /* HERO SECTION - Uses your cover.jpg now */
         .hero {
             padding: 100px 20px;
             text-align: center; color: var(--white);
-            background: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.8)), 
-                        url('https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=1600&q=80');
+            background: linear-gradient(rgba(15, 23, 42, 0.75), rgba(15, 23, 42, 0.75)), 
+                        url('cover.jpg'); /* This links to your uploaded file */
             background-size: cover; background-position: center;
+            background-attachment: fixed;
         }
         .profile-pic {
             width: 150px; height: 150px; border-radius: 50%;
@@ -47,31 +47,22 @@
         .section-title { text-align: center; margin-bottom: 40px; }
         .section-title h2 { font-size: 2.2rem; color: var(--primary); }
         
-        .info-card {
-            background: white; padding: 40px; border-radius: 20px;
-            border: 1px solid #e2e8f0; margin-bottom: 40px; box-shadow: 0 4px 6px rgba(0,0,0,0.02);
-        }
+        .info-card { background: white; padding: 40px; border-radius: 20px; border: 1px solid #e2e8f0; margin-bottom: 40px; }
 
-        /* Services */
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
-        .service-card {
-            background: white; padding: 30px; border-radius: 16px;
-            border: 1px solid #e2e8f0; transition: 0.3s;
-        }
+        .service-card { background: white; padding: 30px; border-radius: 16px; border: 1px solid #e2e8f0; transition: 0.3s; }
         .service-card:hover { border-color: var(--accent); transform: translateY(-5px); }
 
-        /* Contact Section Fix */
         .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
         .contact-card {
             background: white; padding: 30px; border-radius: 16px;
             text-align: center; border: 1px solid #e2e8f0; transition: 0.3s;
             text-decoration: none; color: inherit;
             display: flex; flex-direction: column; align-items: center;
-            overflow: hidden;
         }
         .contact-card:hover { border-color: var(--accent); box-shadow: 0 10px 25px rgba(0,0,0,0.05); }
         .contact-card i { font-size: 2.2rem; margin-bottom: 15px; }
-        .contact-card p { font-size: 0.95rem; font-weight: 600; margin: 0; color: var(--text-main); word-break: break-all; }
+        .contact-card p { font-size: 0.95rem; font-weight: 600; margin: 0; word-break: break-all; }
 
         footer { text-align: center; padding: 60px 20px; color: var(--text-light); background: #f1f5f9; }
     </style>
