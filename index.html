@@ -68,6 +68,10 @@
         .service-card:hover { transform: translateY(-5px); border-color: var(--accent); }
         .service-card h3 { color: #fff; margin-top: 0; }
 
+        /* Tool Tags Styling */
+        .tool-tags { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 15px; }
+        .tag { background: rgba(59, 130, 246, 0.3); border: 1px solid var(--accent); padding: 5px 12px; border-radius: 20px; font-size: 0.85rem; font-weight: 600; }
+
         .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; }
         .contact-card {
             text-align: center; text-decoration: none; color: #fff;
@@ -83,9 +87,10 @@
 <body>
 
 <nav>
-    <a href="#" class="logo">Your future Virtual Assitant</a>
+    <a href="#" class="logo">Your future Virtual Assistant</a>
     <div class="nav-links">
         <a href="#about">About</a>
+        <a href="#skills">Skills</a>
         <a href="#services">Services</a>
         <a href="#contact">Contact</a>
     </div>
@@ -106,35 +111,12 @@
     </div>
 </section>
 
-<section id="services">
+<section id="skills">
     <div class="section-title">
-        <h2>Services Offered</h2>
+        <h2>Expertise & Technical Stack</h2>
     </div>
-    <div class="grid">
-        <div class="card service-card">
-            <h3><i class="fa-solid fa-headset" style="color:var(--accent)"></i> Technical Support</h3>
-            <p>Handling technical inquiries, account troubleshooting, and software support via Email, Chat, and Voice calls.</p>
-        </div>
-        <div class="card service-card">
-            <h3><i class="fa-solid fa-envelope-open-text" style="color:var(--accent)"></i> Inbox Management</h3>
-            <p>Maintaining a zero-inbox policy and prioritizing urgent client communications for smooth operations.</p>
-        </div>
-        <div class="card service-card">
-            <h3><i class="fa-solid fa-calendar-check" style="color:var(--accent)"></i> Administrative Support</h3>
-            <p>Calendar management, data entry, and workflow organization using tools like Notion and Slack.</p>
-        </div>
-    </div>
-</section>
-
-<section id="contact">
-    <div class="section-title">
-        <h2>Get In Touch</h2>
-    </div>
-    <div class="contact-grid">
-        <a href="mailto:irineworksx@gmail.com" class="contact-card">
-            <i class="fa-solid fa-envelope" style="color: var(--accent);"></i>
-            <h3>Email</h3>
-            <p>irineworksx@gmail.com</p>
-        </a>
-
-        <a href="
+    <div class="info-card">
+        <h3>Core Skills</h3>
+        <p>Service Desk Management | Troubleshooting | CRM Optimization | Workflow Automation | Remote Desktop Support | Project Management</p>
+        
+        <h
