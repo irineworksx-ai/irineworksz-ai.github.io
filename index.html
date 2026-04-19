@@ -20,7 +20,7 @@
         * { box-sizing: border-box; }
         body { font-family: 'Plus Jakarta Sans', sans-serif; margin: 0; color: var(--text-main); background: #f8fafc; line-height: 1.6; }
 
-        /* Nav */
+        /* Navigation */
         nav {
             position: sticky; top: 0; background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px); padding: 15px 5%;
@@ -30,7 +30,7 @@
         .logo { font-weight: 800; font-size: 1.2rem; color: var(--primary); text-decoration: none; }
         .nav-links a { text-decoration: none; color: var(--text-light); margin-left: 20px; font-weight: 500; font-size: 0.9rem; }
 
-        /* Hero */
+        /* Hero Section - Now correctly at the top */
         .hero {
             padding: 100px 20px;
             text-align: center; color: var(--white);
@@ -39,22 +39,20 @@
             background-size: cover; background-position: center;
         }
         .profile-pic {
-            width: 140px; height: 140px; border-radius: 50%;
+            width: 150px; height: 150px; border-radius: 50%;
             border: 4px solid var(--accent); margin-bottom: 20px; object-fit: cover;
         }
 
-        /* Standard Sections */
         section { padding: 60px 5%; max-width: 1100px; margin: auto; }
         .section-title { text-align: center; margin-bottom: 40px; }
-        .section-title h2 { font-size: 2.2rem; color: var(--primary); margin-bottom: 10px; }
+        .section-title h2 { font-size: 2.2rem; color: var(--primary); }
         
-        /* Objectives & Info Boxes */
         .info-card {
             background: white; padding: 40px; border-radius: 20px;
-            border: 1px solid #e2e8f0; margin-bottom: 40px;
+            border: 1px solid #e2e8f0; margin-bottom: 40px; box-shadow: 0 4px 6px rgba(0,0,0,0.02);
         }
 
-        /* Services Grid */
+        /* Services */
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
         .service-card {
             background: white; padding: 30px; border-radius: 16px;
@@ -62,20 +60,18 @@
         }
         .service-card:hover { border-color: var(--accent); transform: translateY(-5px); }
 
-        /* Contact Section - Fixed for long links */
+        /* Contact Section Fix */
         .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
         .contact-card {
             background: white; padding: 30px; border-radius: 16px;
             text-align: center; border: 1px solid #e2e8f0; transition: 0.3s;
             text-decoration: none; color: inherit;
             display: flex; flex-direction: column; align-items: center;
-            word-break: break-all; /* THIS FIXES THE OVERFLOW */
+            overflow: hidden;
         }
         .contact-card:hover { border-color: var(--accent); box-shadow: 0 10px 25px rgba(0,0,0,0.05); }
         .contact-card i { font-size: 2.2rem; margin-bottom: 15px; }
-        .icon-email { color: var(--accent); }
-        .icon-fb { color: var(--facebook); }
-        .icon-whatsapp { color: var(--whatsapp); }
+        .contact-card p { font-size: 0.95rem; font-weight: 600; margin: 0; color: var(--text-main); word-break: break-all; }
 
         footer { text-align: center; padding: 60px 20px; color: var(--text-light); background: #f1f5f9; }
     </style>
@@ -83,35 +79,30 @@
 <body>
 
 <nav>
-    <a href="#" class="logo">IRINE SANORJO</a>
+    <a href="#" class="logo">IRINE.WORKS</a>
     <div class="nav-links">
         <a href="#about">About</a>
         <a href="#services">Services</a>
         <a href="#contact">Contact</a>
-        <a href="mailto:irineworksx@gmail.com" class="contact-card">
-<p>your-email@example.com</p>
-        <a href="https://facebook.com/irrrrrrine.snrjo/" target="_blank" class="contact-card">
-        <a href="+6399945332055" target="_blank" class="contact-card">
-<p>+63 9994 5332055</p>
     </div>
 </nav>
 
 <header class="hero">
     <div class="hero-content">
         <img src="profile.jpg" alt="Irine Sanorjo" class="profile-pic">
-        <h1>Irine Sanorjo</h1>
-        <p style="font-size: 1.2rem; opacity: 0.9;">Technical Support Specialist & Virtual Assistant</p>
+        <h1 style="font-size: 3rem; margin: 0;">Irine Sanorjo</h1>
+        <p style="font-size: 1.25rem; opacity: 0.9;">Technical Support Specialist & Virtual Assistant</p>
     </div>
 </header>
 
 <section id="about">
     <div class="info-card">
         <h2 style="margin-top:0; color: var(--primary);">Professional Objective</h2>
-        <p>A results-driven Technical Support VA with a background in customer service and service desk operations. My objective is to provide fast, accurate technical resolutions and administrative support that allows business owners to focus on growth while I handle the complexities of operations, calls, and chat support.</p>
+        <p>A results-driven Technical Support VA with a background in customer service and service desk operations. My goal is to provide fast, accurate technical resolutions and administrative support that allows business owners to focus on growth while I handle the complexities of operations, calls, and chat support.</p>
     </div>
 </section>
 
-<section id="services" style="background: #ffffff; border-radius: 30px;">
+<section id="services">
     <div class="section-title">
         <h2>Services Offered</h2>
     </div>
@@ -122,6 +113,43 @@
         </div>
         <div class="card service-card">
             <h3><i class="fa-solid fa-envelope-open-text" style="color:var(--accent)"></i> Inbox Management</h3>
-            <p>Filtering spam, prioritizing urgent client emails, and maintaining a zero-inbox policy for your peace of mind.</p>
+            <p>Maintaining a zero-inbox policy and prioritizing urgent client communications for smooth operations.</p>
         </div>
-        <div class="card service-card
+        <div class="card service-card">
+            <h3><i class="fa-solid fa-calendar-check" style="color:var(--accent)"></i> Administrative Support</h3>
+            <p>Calendar management, data entry, and workflow organization using tools like Notion and Slack.</p>
+        </div>
+    </div>
+</section>
+
+<section id="contact">
+    <div class="section-title">
+        <h2>Get In Touch</h2>
+    </div>
+    <div class="contact-grid">
+        <a href="mailto:irineworksx@gmail.com" class="contact-card">
+            <i class="fa-solid fa-envelope" style="color: var(--accent);"></i>
+            <h3>Email</h3>
+            <p>irineworksx@gmail.com</p>
+        </a>
+
+        <a href="https://www.facebook.com/irrrrrrine.snrjo/" target="_blank" class="contact-card">
+            <i class="fa-brands fa-facebook" style="color: var(--facebook);"></i>
+            <h3>Facebook</h3>
+            <p>Visit Profile</p>
+        </a>
+
+        <a href="https://wa.me/639945332055" target="_blank" class="contact-card">
+            <i class="fa-brands fa-whatsapp" style="color: var(--whatsapp);"></i>
+            <h3>WhatsApp / Viber</h3>
+            <p>+63 994 533 2055</p>
+        </a>
+    </div>
+</section>
+
+<footer>
+    <p>&copy; 2026 Irine Sanorjo | High-Level Support Solutions</p>
+</footer>
+
+</body>
+</html>
