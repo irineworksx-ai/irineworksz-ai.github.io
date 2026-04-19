@@ -18,58 +18,81 @@
         }
 
         * { box-sizing: border-box; }
-        body { font-family: 'Plus Jakarta Sans', sans-serif; margin: 0; color: var(--text-main); background: #f8fafc; scroll-behavior: smooth; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; margin: 0; color: var(--text-main); background: #f8fafc; line-height: 1.6; }
 
+        /* Nav */
         nav {
-            position: sticky; top: 0; background: rgba(255, 255, 255, 0.9);
+            position: sticky; top: 0; background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px); padding: 15px 5%;
             display: flex; justify-content: space-between; align-items: center;
             z-index: 1000; border-bottom: 1px solid #e2e8f0;
         }
-        .logo { font-weight: 800; font-size: 1.2rem; color: var(--primary); }
+        .logo { font-weight: 800; font-size: 1.2rem; color: var(--primary); text-decoration: none; }
         .nav-links a { text-decoration: none; color: var(--text-light); margin-left: 20px; font-weight: 500; font-size: 0.9rem; }
 
+        /* Hero */
         .hero {
-            height: 70vh;
-            display: flex; align-items: center; justify-content: center;
+            padding: 100px 20px;
             text-align: center; color: var(--white);
-            background: linear-gradient(rgba(15, 23, 42, 0.75), rgba(15, 23, 42, 0.75)), 
+            background: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.8)), 
                         url('https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=1600&q=80');
             background-size: cover; background-position: center;
-            padding: 0 20px;
         }
         .profile-pic {
-            width: 130px; height: 130px; border-radius: 50%;
-            border: 4px solid var(--accent); margin-bottom: 20px;
-            object-fit: cover;
+            width: 140px; height: 140px; border-radius: 50%;
+            border: 4px solid var(--accent); margin-bottom: 20px; object-fit: cover;
         }
 
-        section { padding: 80px 5%; max-width: 1100px; margin: auto; }
+        /* Standard Sections */
+        section { padding: 60px 5%; max-width: 1100px; margin: auto; }
         .section-title { text-align: center; margin-bottom: 40px; }
+        .section-title h2 { font-size: 2.2rem; color: var(--primary); margin-bottom: 10px; }
         
-        /* Contact Section Grid */
-        .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 30px; }
+        /* Objectives & Info Boxes */
+        .info-card {
+            background: white; padding: 40px; border-radius: 20px;
+            border: 1px solid #e2e8f0; margin-bottom: 40px;
+        }
+
+        /* Services Grid */
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
+        .service-card {
+            background: white; padding: 30px; border-radius: 16px;
+            border: 1px solid #e2e8f0; transition: 0.3s;
+        }
+        .service-card:hover { border-color: var(--accent); transform: translateY(-5px); }
+
+        /* Contact Section - Fixed for long links */
+        .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
         .contact-card {
             background: white; padding: 30px; border-radius: 16px;
             text-align: center; border: 1px solid #e2e8f0; transition: 0.3s;
             text-decoration: none; color: inherit;
+            display: flex; flex-direction: column; align-items: center;
+            word-break: break-all; /* THIS FIXES THE OVERFLOW */
         }
-        .contact-card:hover { transform: translateY(-5px); border-color: var(--accent); box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
-        .contact-card i { font-size: 2rem; margin-bottom: 15px; }
+        .contact-card:hover { border-color: var(--accent); box-shadow: 0 10px 25px rgba(0,0,0,0.05); }
+        .contact-card i { font-size: 2.2rem; margin-bottom: 15px; }
         .icon-email { color: var(--accent); }
         .icon-fb { color: var(--facebook); }
         .icon-whatsapp { color: var(--whatsapp); }
 
-        footer { text-align: center; padding: 40px; color: var(--text-light); border-top: 1px solid #e2e8f0; }
+        footer { text-align: center; padding: 60px 20px; color: var(--text-light); background: #f1f5f9; }
     </style>
 </head>
 <body>
 
 <nav>
-    <div class="logo">IRINE.WORKS</div>
+    <a href="#" class="logo">IRINE SANORJO</a>
     <div class="nav-links">
+        <a href="#about">About</a>
         <a href="#services">Services</a>
         <a href="#contact">Contact</a>
+        <a href="mailto:irineworksx@gmail.com" class="contact-card">
+<p>your-email@example.com</p>
+        <a href="https://facebook.com/irrrrrrine.snrjo/" target="_blank" class="contact-card">
+        <a href="+6399945332055" target="_blank" class="contact-card">
+<p>+63 9994 5332055</p>
     </div>
 </nav>
 
@@ -77,41 +100,28 @@
     <div class="hero-content">
         <img src="profile.jpg" alt="Irine Sanorjo" class="profile-pic">
         <h1>Irine Sanorjo</h1>
-        <p>Technical Support VA | Available for Hire</p>
-        <a href="#contact" style="background: var(--accent); color: white; padding: 12px 25px; border-radius: 8px; text-decoration: none; font-weight: 600;">Contact Me</a>
+        <p style="font-size: 1.2rem; opacity: 0.9;">Technical Support Specialist & Virtual Assistant</p>
     </div>
 </header>
 
-<section id="contact">
-    <div class="section-title">
-        <h2>Get In Touch</h2>
-        <p>Choose your preferred way to connect</p>
-    </div>
-    
-    <div class="contact-grid">
-        <a href="mailto:irineworksx@gmail.com" class="contact-card">
-            <i class="fa-solid fa-envelope icon-email"></i>
-            <h3>Email Me</h3>
-            <p>irineworksx@gmail.com</p>
-        </a>
-
-        <a href="https://facebook.com/your-facebook-link" target="_blank" class="contact-card">
-            <i class="fa-brands fa-facebook icon-fb"></i>
-            <h3>Facebook</h3>
-            <p>https://www.facebook.com/irrrrrrine.snrjo/</p>
-        </a>
-
-        <a href="https://wa.me/your-phone-number" target="_blank" class="contact-card">
-            <i class="fa-brands fa-whatsapp icon-whatsapp"></i>
-            <h3>WhatsApp / Viber</h3>
-            <p>+63 994 533 2055</p>
-        </a>
+<section id="about">
+    <div class="info-card">
+        <h2 style="margin-top:0; color: var(--primary);">Professional Objective</h2>
+        <p>A results-driven Technical Support VA with a background in customer service and service desk operations. My objective is to provide fast, accurate technical resolutions and administrative support that allows business owners to focus on growth while I handle the complexities of operations, calls, and chat support.</p>
     </div>
 </section>
 
-<footer>
-    <p>&copy; 2026 Irine Sanorjo | High-Level Support Solutions</p>
-</footer>
-
-</body>
-</html>
+<section id="services" style="background: #ffffff; border-radius: 30px;">
+    <div class="section-title">
+        <h2>Services Offered</h2>
+    </div>
+    <div class="grid">
+        <div class="card service-card">
+            <h3><i class="fa-solid fa-headset" style="color:var(--accent)"></i> Technical Support</h3>
+            <p>Handling technical inquiries, account troubleshooting, and software support via Email, Chat, and Voice calls.</p>
+        </div>
+        <div class="card service-card">
+            <h3><i class="fa-solid fa-envelope-open-text" style="color:var(--accent)"></i> Inbox Management</h3>
+            <p>Filtering spam, prioritizing urgent client emails, and maintaining a zero-inbox policy for your peace of mind.</p>
+        </div>
+        <div class="card service-card
