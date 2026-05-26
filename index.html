@@ -1,322 +1,371 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Irine Sanorjo | Technical Support VA</title>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        :root {
-            --primary: #ffffff;
-            --accent: #3b82f6; 
-            --whatsapp: #25d366;
-            --facebook: #1877f2;
-            --linkedin: #0077b5;
-            --google-form: #7248b9; /* Purple for Google Forms */
-            --text-main: #ffffff;
-            --text-light: #e2e8f0;
-            --glass: rgba(0, 0, 0, 0.6); 
-        }
+      :root {
+        --primary: #ffffff;
+        --accent: #3b82f6;
+        --whatsapp: #25d366;
+        --facebook: #1877f2;
+        --linkedin: #0077b5;
+        --google-form: #7248b9;
+        /* Purple for Google Forms */
+        --text-main: #ffffff;
+        --text-light: #e2e8f0;
+        --glass: rgba(0, 0, 0, 0.6);
+      }
 
-        * { box-sizing: border-box; }
+      * {
+        box-sizing: border-box;
+      }
 
-        body { 
-            font-family: 'Plus Jakarta Sans', sans-serif; 
-            margin: 0; 
-            color: var(--text-main); 
-            line-height: 1.6; 
-            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
-                        url('cover.gif'); 
-            background-size: cover; 
-            background-position: center; 
-            background-attachment: fixed; 
-            background-repeat: no-repeat;
-        }
+      body {
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        margin: 0;
+        color: var(--text-main);
+        line-height: 1.6;
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('cover.gif');
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+      }
 
-        nav {
-            position: sticky; top: 0; background: rgba(0, 0, 0, 0.8);
-            backdrop-filter: blur(10px); padding: 15px 5%;
-            display: flex; justify-content: space-between; align-items: center;
-            z-index: 1000; border-bottom: 1px solid rgba(255,255,255,0.1);
-        }
-        .logo { font-weight: 800; font-size: 1.2rem; color: #fff; text-decoration: none; }
-        .nav-links a { text-decoration: none; color: #ccc; margin-left: 20px; font-weight: 500; font-size: 0.9rem; }
+      nav {
+        position: sticky;
+        top: 0;
+        background: rgba(0, 0, 0, 0.8);
+        backdrop-filter: blur(10px);
+        padding: 15px 5%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 1000;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      }
 
-        .hero {
-              min-height: 90vh;
-              padding: 80px 6%;
-              display: flex;
-              align-items: center;
-              justify-content: center; 
-         .hero-content {
-             display: flex;
-             align-items: center;
-             justify-content: center;
-             gap: 80px;
-             flex-wrap: wrap;
-             width: 100%;
-        }
-      .profile-wrapper {
-    position: relative;
-    display: inline-block;
-    margin-bottom: 20px;
-}
+      .logo {
+        font-weight: 800;
+        font-size: 1.2rem;
+        color: #fff;
+        text-decoration: none;
+      }
 
-/* glow behind the image */
-.profile-wrapper::before {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 340px;
-    height: 340px;
-    transform: translate(-50%, -50%);
- background: radial-gradient(circle, rgba(59,130,246,0.25), transparent 70%); filter: blur(25px); z-index: 0;
-}
+      .nav-links a {
+        text-decoration: none;
+        color: #ccc;
+        margin-left: 20px;
+        font-weight: 500;
+        font-size: 0.9rem;
+      }
 
-.profile-pic {
-    position: relative;
-    z-index: 1;
-    width: 220px;
-    height: 220px;
-    border-radius: 20px;
-    object-fit: cover;
-
-    border: 2px solid rgba(255,255,255,0.15);
-
-    /* REMOVE the strong blending */
-    mix-blend-mode: normal;
-    opacity: 1;
-
-    /* softer edge fade (less aggressive) */
-    -webkit-mask-image: radial-gradient(circle, rgba(0,0,0,1) 75%, rgba(0,0,0,0.2) 100%);
-    mask-image: radial-gradient(circle, rgba(0,0,0,1) 75%, rgba(0,0,0,0.2) 100%);
-
-    box-shadow: 0 15px 50px rgba(0,0,0,0.5);
-}
-
-        section {     padding: 60px 6%; max-width: 1500px; margin: auto;}
-        .section-title { text-align: center; margin-bottom: 30px; }
-        .section-title h2 { font-size: 2.2rem; color: #fff; }
-        
-        .info-card, .service-card, .contact-card {
-            background: var(--glass);
-            backdrop-filter: blur(5px);
-            padding: 40px; border-radius: 20px;
-            border: 1px solid rgba(255,255,255,0.1);
-            margin-bottom: 30px;
-        }
-
-        .grid { 
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 25px;
-}
-        .service-card { padding: 30px; margin-bottom: 0; transition: 0.3s; }
-        .service-card:hover { transform: translateY(-5px); border-color: var(--accent); }
-        .service-card h3 { color: #fff; margin-top: 0; }
-
-        .tool-tags { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 15px; }
-        .tag { background: rgba(59, 130, 246, 0.3); border: 1px solid var(--accent); padding: 5px 12px; border-radius: 20px; font-size: 0.85rem; font-weight: 600; }
-
-        /* Custom styling for the Required Form Card */
-        .form-card {
-            background: rgba(114, 72, 185, 0.2);
-            border: 2px solid var(--google-form);
-            text-align: center;
-            padding: 30px;
-            border-radius: 20px;
-            margin-bottom: 40px;
-            text-decoration: none;
-            color: #fff;
-            display: block;
-            transition: 0.3s;
-        }
-        .form-card:hover { background: rgba(114, 72, 185, 0.3); transform: scale(1.02); }
-
-        .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; }
-        .contact-card {
-            text-align: center; text-decoration: none; color: #fff;
-            display: flex; flex-direction: column; align-items: center;
-            margin-bottom: 0; padding: 25px; transition: 0.3s;
-        }
-        .contact-card:hover { border-color: var(--accent); background: rgba(255, 255, 255, 0.05); }
-        .contact-card i { font-size: 2rem; margin-bottom: 10px; }
-        .contact-card p { font-weight: 600; word-break: break-all; margin: 0; font-size: 0.85rem; }
-
-        .stat-highlight { color: var(--accent); font-weight: 800; font-size: 1.5rem; }
-
-        footer { text-align: center; padding: 40px; color: #aaa; background: rgba(0,0,0,0.8); }
-        @media (max-width: 900px) {
-
-    .hero-content {
-        flex-direction: column;
+      .hero {
+        padding: 80px 20px 40px;
         text-align: center;
-        gap: 40px;
-    }
+      }
 
-    .grid {
-        grid-template-columns: 1fr;
-    }
+      .profile-wrapper {
+        position: relative;
+        display: inline-block;
+        margin-bottom: 20px;
+      }
 
-    .profile-pic {
-        width: 180px;
-        height: 180px;
-    }
+      /* glow behind the image */
+      .profile-wrapper::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 340px;
+        height: 340px;
+        transform: translate(-50%, -50%);
+        background: radial-gradient(circle, rgba(59, 130, 246, 0.25), transparent 70%);
+        filter: blur(25px);
+        z-index: 0;
+      }
 
-    h1 {
-        font-size: 2.5rem !important;
-    }
-}    
+      .profile-pic {
+        position: relative;
+        z-index: 1;
+        width: 220px;
+        height: 220px;
+        border-radius: 20px;
+        object-fit: cover;
+        border: 2px solid rgba(255, 255, 255, 0.15);
+        /* REMOVE the strong blending */
+        mix-blend-mode: normal;
+        opacity: 1;
+        /* softer edge fade (less aggressive) */
+        -webkit-mask-image: radial-gradient(circle, rgba(0, 0, 0, 1) 75%, rgba(0, 0, 0, 0.2) 100%);
+        mask-image: radial-gradient(circle, rgba(0, 0, 0, 1) 75%, rgba(0, 0, 0, 0.2) 100%);
+        box-shadow: 0 15px 50px rgba(0, 0, 0, 0.5);
+      }
+
+      section {
+        padding: 40px 5%;
+        max-width: 1100px;
+        margin: auto;
+      }
+
+      .section-title {
+        text-align: center;
+        margin-bottom: 30px;
+      }
+
+      .section-title h2 {
+        font-size: 2.2rem;
+        color: #fff;
+      }
+
+      .info-card,
+      .service-card,
+      .contact-card {
+        background: var(--glass);
+        backdrop-filter: blur(5px);
+        padding: 40px;
+        border-radius: 20px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        margin-bottom: 30px;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 20px;
+      }
+
+      .service-card {
+        padding: 30px;
+        margin-bottom: 0;
+        transition: 0.3s;
+      }
+
+      .service-card:hover {
+        transform: translateY(-5px);
+        border-color: var(--accent);
+      }
+
+      .service-card h3 {
+        color: #fff;
+        margin-top: 0;
+      }
+
+      .tool-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 15px;
+      }
+
+      .tag {
+        background: rgba(59, 130, 246, 0.3);
+        border: 1px solid var(--accent);
+        padding: 5px 12px;
+        border-radius: 20px;
+        font-size: 0.85rem;
+        font-weight: 600;
+      }
+
+      /* Custom styling for the Required Form Card */
+      .form-card {
+        background: rgba(114, 72, 185, 0.2);
+        border: 2px solid var(--google-form);
+        text-align: center;
+        padding: 30px;
+        border-radius: 20px;
+        margin-bottom: 40px;
+        text-decoration: none;
+        color: #fff;
+        display: block;
+        transition: 0.3s;
+      }
+
+      .form-card:hover {
+        background: rgba(114, 72, 185, 0.3);
+        transform: scale(1.02);
+      }
+
+      .contact-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+      }
+
+      .contact-card {
+        text-align: center;
+        text-decoration: none;
+        color: #fff;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 0;
+        padding: 25px;
+        transition: 0.3s;
+      }
+
+      .contact-card:hover {
+        border-color: var(--accent);
+        background: rgba(255, 255, 255, 0.05);
+      }
+
+      .contact-card i {
+        font-size: 2rem;
+        margin-bottom: 10px;
+      }
+
+      .contact-card p {
+        font-weight: 600;
+        word-break: break-all;
+        margin: 0;
+        font-size: 0.85rem;
+      }
+
+      .stat-highlight {
+        color: var(--accent);
+        font-weight: 800;
+        font-size: 1.5rem;
+      }
+
+      footer {
+        text-align: center;
+        padding: 40px;
+        color: #aaa;
+        background: rgba(0, 0, 0, 0.8);
+      }
     </style>
-</head>
-<body>
-
-<nav>
-    <a href="#" class="logo">Your future Virtual Assistant</a>
-    <div class="nav-links">
+  </head>
+  <body>
+    <nav>
+      <a href="#" class="logo">Your future Virtual Assistant</a>
+      <div class="nav-links">
         <a href="#about">About</a>
         <a href="#skills">Skills</a>
         <a href="#services">Services</a>
         <a href="#contact">Contact</a>
-    </div>
-</nav>
-
-<header class="hero">
-    <div class="hero-content">
-
+      </div>
+    </nav>
+    <header class="hero">
+      <div class="hero-content">
         <div class="profile-wrapper">
-            <img src="profile.jpg" alt="Irine Sanorjo" class="profile-pic">
+          <img src="profile.jpg" alt="Irine Sanorjo" class="profile-pic">
         </div>
-
-        <div class="hero-text">
-            <h1 style="font-size: 4rem; margin: 0;">Irine Sanorjo</h1>
-            <p style="font-size: 1.4rem; opacity: 0.9;">
-                Technical Support Specialist & Virtual Assistant
-            </p>
-        </div>
-
-    </div>
-</header>
-
-<section id="about">
-    <div class="info-card">
+        <h1 style="font-size: 3rem; margin: 0;">Irine Sanorjo</h1>
+        <p style="font-size: 1.25rem; opacity: 0.9;">Technical Support Specialist & Virtual Assistant</p>
+      </div>
+    </header>
+    <section id="about">
+      <div class="info-card">
         <h2 style="margin-top:0; color: #fff;">Professional Objective</h2>
         <p>A results-driven Technical Support VA with a background in customer service and service desk operations. My goal is to provide fast, accurate technical resolutions and administrative support that allows business owners to focus on growth while I handle the complexities of operations, calls, and chat support.</p>
-    </div>
-
-    <div class="info-card">
+      </div>
+      <div class="info-card">
         <h2 style="margin-top:0; color: #fff;">Proven Experience</h2>
-        <p>Currently supporting one of the <strong>largest healthcare companies in the US</strong>, managing high-volume technical troubleshooting and end-user support.</p>
+        <p>Currently supporting one of the <strong>largest healthcare companies in the US</strong>, managing high-volume technical troubleshooting and end-user support. </p>
         <div style="margin-top: 15px;">
-            <span class="stat-highlight">250+</span> <span>Technical Support Calls Resolved Weekly</span>
+          <span class="stat-highlight">250+</span>
+          <span>Technical Support Calls Resolved Weekly</span>
         </div>
-    </div>
-
-    <div class="info-card" style="border-left: 5px solid var(--accent);">
-        <h3 style="margin-top:0; color: #fff;"><i class="fa-solid fa-clock"></i> Time Availability</h3>
-        <p style="font-size: 1.1rem;"><strong>8:00 AM – 11:00 PM CST</strong></p>
+      </div>
+      <div class="info-card" style="border-left: 5px solid var(--accent);">
+        <h3 style="margin-top:0; color: #fff;">
+          <i class="fa-solid fa-clock"></i> Time Availability
+        </h3>
+        <p style="font-size: 1.1rem;">
+          <strong>8:00 AM – 11:00 PM CST</strong>
+        </p>
         <p style="font-size: 0.9rem; opacity: 0.8;">Providing extensive coverage to ensure your business operations stay smooth during US business hours.</p>
-    </div>
-</section>
-
-<section id="skills">
-    <div class="section-title">
+      </div>
+    </section>
+    <section id="skills">
+      <div class="section-title">
         <h2>Expertise & Technical Stack</h2>
-    </div>
-    <div class="info-card">
+      </div>
+      <div class="info-card">
         <h3>Core Skills</h3>
         <p>Service Desk Management | Troubleshooting | CRM Optimization | Workflow Automation | Remote Desktop Support | Project Management</p>
-        
         <h3 style="margin-top: 25px;">Tools & Technologies</h3>
         <div class="tool-tags">
-            <span class="tag">ServiceNow</span>
-            <span class="tag">Citrix</span>
-            <span class="tag">CRM Systems</span>
-            <span class="tag">LLM / AI Integration</span>
-            <span class="tag">Zapier</span>
-            <span class="tag">Remote Support Tools</span>
-            <span class="tag">Microsoft 365 Applications</span>
+          <span class="tag">ServiceNow</span>
+          <span class="tag">Citrix</span>
+          <span class="tag">CRM Systems</span>
+          <span class="tag">LLM / AI Integration</span>
+          <span class="tag">Zapier</span>
+          <span class="tag">Remote Support Tools</span>
+          <span class="tag">Microsoft 365 Applications</span>
         </div>
-    </div>
-</section>
-
-<section id="services">
-    <div class="section-title">
+      </div>
+    </section>
+    <section id="services">
+      <div class="section-title">
         <h2>Services Offered</h2>
-    </div>
-    <div class="grid">
+      </div>
+      <div class="grid">
         <div class="card service-card">
-            <h3><i class="fa-solid fa-headset" style="color:var(--accent)"></i> Technical Support</h3>
-            <p>Handling technical inquiries, account troubleshooting, and software support via Email, Chat, and Voice calls using tools like ServiceNow and Citrix.</p>
+          <h3>
+            <i class="fa-solid fa-headset" style="color:var(--accent)"></i> Technical Support
+          </h3>
+          <p>Handling technical inquiries, account troubleshooting, and software support via Email, Chat, and Voice calls using tools like ServiceNow and Citrix.</p>
         </div>
         <div class="card service-card">
-            <h3><i class="fa-solid fa-envelope-open-text" style="color:var(--accent)"></i> Operations Support</h3>
-            <p>Utilizing CRM systems and Zapier automations to maintain zero-inbox workflows and efficient client communication.</p>
+          <h3>
+            <i class="fa-solid fa-envelope-open-text" style="color:var(--accent)"></i> Operations Support
+          </h3>
+          <p>Utilizing CRM systems and Zapier automations to maintain zero-inbox workflows and efficient client communication.</p>
         </div>
         <div class="card service-card">
-            <h3><i class="fa-solid fa-calendar-check" style="color:var(--accent)"></i> Administrative Suite</h3>
-            <p>Expert management of Microsoft 365 applications, calendar scheduling, and AI-driven task optimization using LLMs.</p>
+          <h3>
+            <i class="fa-solid fa-calendar-check" style="color:var(--accent)"></i> Administrative Suite
+          </h3>
+          <p>Expert management of Microsoft 365 applications, calendar scheduling, and AI-driven task optimization using LLMs.</p>
         </div>
-    </div>
-</section>
-    
-<section id="resume">
-    <div class="info-card" style="text-align: center;">
+      </div>
+    </section>
+    <section id="resume">
+      <div class="info-card" style="text-align: center;">
         <h2 style="margin-top:0; color:#fff;">My Resume</h2>
         <p style="opacity:0.9;">Download my full experience, skills, and technical background.</p>
-
-        <a href="Irine_Sanorjo_Resume.pdf" download>
-           style="display: inline-block; margin-top: 15px; padding: 12px 30px; 
-                  background: #3b82f6; color: #fff; border-radius: 30px; 
-                  text-decoration: none; font-weight: 600; transition: 0.3s;">
-            <i class="fa-solid fa-download"></i> Download Resume
-        </a>
-    </div>
-</section>
-
-<section id="contact">
-    <div class="section-title">
+        <a href="Irine_Sanorjo_Resume.pdf" download> style="display: inline-block; margin-top: 15px; padding: 12px 30px; background: #3b82f6; color: #fff; border-radius: 30px; text-decoration: none; font-weight: 600; transition: 0.3s;"> <i class="fa-solid fa-download"></i> Download Resume </a>
+      </div>
+    </section>
+    <section id="contact">
+      <div class="section-title">
         <h2>Get In Touch</h2>
-    </div>
-
-    <a href="https://forms.gle/qBJwigEg9nUJ6w5i8" target="_blank" class="form-card">
+      </div>
+      <a href="https://forms.gle/qBJwigEg9nUJ6w5i8" target="_blank" class="form-card">
         <i class="fa-solid fa-file-lines" style="font-size: 2.5rem; margin-bottom: 15px; color: var(--google-form);"></i>
         <h3 style="margin: 0 0 5px 0;">Step 1: Fill out the Inquiry Form</h3>
         <p style="margin: 0; opacity: 0.9;">Please provide your name, email, and availability to get started.</p>
-    </a>
-
-    <div class="contact-grid">
+      </a>
+      <div class="contact-grid">
         <a href="mailto:irineworksx@gmail.com" class="contact-card">
-            <i class="fa-solid fa-envelope" style="color: var(--accent);"></i>
-            <h3>Email</h3>
-            <p>irineworksx@gmail.com</p>
+          <i class="fa-solid fa-envelope" style="color: var(--accent);"></i>
+          <h3>Email</h3>
+          <p>irineworksx@gmail.com</p>
         </a>
-
         <a href="https://www.facebook.com/irrrrrrine.snrjo/" target="_blank" class="contact-card">
-            <i class="fa-brands fa-facebook" style="color: var(--facebook);"></i>
-            <h3>Facebook</h3>
-            <p>Visit Profile</p>
+          <i class="fa-brands fa-facebook" style="color: var(--facebook);"></i>
+          <h3>Facebook</h3>
+          <p>Visit Profile</p>
         </a>
-
         <a href="https://www.linkedin.com/in/irine-sanorjo-6902933b6" target="_blank" class="contact-card">
-            <i class="fa-brands fa-linkedin" style="color: var(--linkedin);"></i>
-            <h3>LinkedIn</h3>
-            <p>irine-sanorjo</p>
+          <i class="fa-brands fa-linkedin" style="color: var(--linkedin);"></i>
+          <h3>LinkedIn</h3>
+          <p>irine-sanorjo</p>
         </a>
-
         <a href="https://wa.me/639945332055" target="_blank" class="contact-card">
-            <i class="fa-brands fa-whatsapp" style="color: var(--whatsapp);"></i>
-            <h3>WhatsApp</h3>
-            <p>+63 994 533 2055</p>
+          <i class="fa-brands fa-whatsapp" style="color: var(--whatsapp);"></i>
+          <h3>WhatsApp</h3>
+          <p>+63 994 533 2055</p>
         </a>
-    </div>
-</section>
-
-<footer>
-    <p>&copy; 2026 Irine Sanorjo | Your Future Virtual Assistant</p>
-</footer>
-
-</body>
+      </div>
+    </section>
+    <footer>
+      <p>&copy; 2026 Irine Sanorjo | Your Future Virtual Assistant</p>
+    </footer>
+  </body>
 </html>
