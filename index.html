@@ -148,6 +148,27 @@
         .stat-highlight { color: var(--accent); font-weight: 800; font-size: 1.5rem; }
 
         footer { text-align: center; padding: 40px; color: #aaa; background: rgba(0,0,0,0.8); }
+        @media (max-width: 900px) {
+
+    .hero-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 40px;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .profile-pic {
+        width: 180px;
+        height: 180px;
+    }
+
+    h1 {
+        font-size: 2.5rem !important;
+    }
+}    
     </style>
 </head>
 <body>
